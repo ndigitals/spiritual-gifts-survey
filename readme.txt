@@ -42,7 +42,4 @@ Use [spiritual_gifts email="your@email.com"] if you wish to specify the target e
 = 0.9.2 =
 This version fixes url issues (updates spiritual-gifts directory to spiritual-gifts-survey)
 
-= 0.9.1 =
-This version fixes an issue with the option email="example.com"
-
 `<?php code(); // goes in backticks ?>`
