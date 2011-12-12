@@ -10,7 +10,7 @@ Spiritual Gifts Survey to help church members find their place of service in the
 
 == Description ==
 
-The spiritual gifts survey gives a 128 question test and ranks the gifts based on the test score.  In addition, the S.H.A.P.E. Survey portion uses Saddleback Church's S.H.A.P.E. model of Spiritual Gifts, Heart, Abilities, Personality, and Experience to help reveal how God as already shaped you for serving Him.
+The Spiritual Gifts Survey gives a 128 question test and ranks the gifts based on the test score.  In addition, the S.H.A.P.E. Survey portion uses Saddleback Church's S.H.A.P.E. model of Spiritual Gifts, Heart, Abilities, Personality, and Experience to help reveal how God as already shaped you for serving Him.
 
 == Installation ==
 
