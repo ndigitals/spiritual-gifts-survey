@@ -183,7 +183,7 @@ function spiritual_gifts_write_form( $email ) {
     </script>";
     
     //start body of survey page
-    $url = plugins_url('spiritual-gifts/gifts-email.php');
+    $url = plugins_url('spiritual-gifts-survey/gifts-email.php');
     $return_var .= "<p>Rate how often each statement is reflected in your life:</p>
     <form name='mySurvey' action='$url' method='post' >";
     
