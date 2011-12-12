@@ -14,10 +14,6 @@ The spiritual gifts survey gives a 128 question test and ranks the gifts based o
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
 1. Activate the plugin through the 'Plugins' menu in WordPress
 2. Place the [spiritual_gifts] shortcode on the page you wish the survey to appear.  Use [spiritual_gifts email="your@email.com"] if you wish to specify the target email address, otherwise the admin email will be used.
 
