@@ -6,7 +6,7 @@ Requires at least: 3.2
 Tested up to: 3.2
 Stable tag: 0.9.2
 
-Spiritual Gifts and Strengths survey to help church members find their place of service in the local church and other service organizations.
+Spiritual Gifts Survey to help church members find their place of service in the local church and other service organizations.
 
 == Description ==
 
