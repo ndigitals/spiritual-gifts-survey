@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: mynamedia
 Donate link: http://gifts.mynamedia.net
-Tags: Spiritual Gifts Survey (and optional S.H.A.P.E survey)
+Tags: spiritual gifts, survey, s.h.a.p.e., test, church
 Requires at least: 3.2
 Tested up to: 3.2
 Stable tag: 0.9.2
