@@ -4,7 +4,7 @@ Donate link: http://gifts.mynamedia.net
 Tags: spiritual gifts, survey, s.h.a.p.e., test, church, plugin, page, admin
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 
 Spiritual Gifts Survey to help church members find their place of service in the local church and other service organizations.
 
@@ -31,15 +31,9 @@ Use [spiritual_gifts email="your@email.com"] if you wish to specify the target e
 
 == Changelog ==
 
-= 0.9.2 =
-*When this plugin was added to Wordpress the plugin directory was changed, so this version corrects the plugin directory
-
-= 0.9.1 =
-*first stable version of plugin
+= 0.9.3 =
+*First stable version of plugin
 
 == Upgrade Notice ==
-
-= 0.9.2 =
-This version fixes url issues (updates spiritual-gifts directory to spiritual-gifts-survey)
 
 `<?php code(); // goes in backticks ?>`
