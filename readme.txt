@@ -4,7 +4,7 @@ Donate link: http://gifts.mynamedia.net
 Tags: Spiritual Gifts Survey (and optional S.H.A.P.E survey)
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 3.2
+Stable tag: 0.9.1
 
 Spiritual Gifts and Strengths survey to help church members find their place of service in the local church and other service organizations.
 
