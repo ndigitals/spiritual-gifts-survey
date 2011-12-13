@@ -353,7 +353,7 @@ function spiritual_gifts_write_form( $email, $shape ) {
 
     $return_var .= "</form>";
 
-    echo $return_var;
+    return $return_var;
 }
 
 //create the array spiritual_gifts_array and populate it with the 128 S questions
