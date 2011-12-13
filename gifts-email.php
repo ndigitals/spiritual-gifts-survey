@@ -11,7 +11,7 @@
 ob_start();
 
 // Contact subject
-$subject ="Spiritual Gifts Test"; 
+$subject ="Spiritual Gifts Survey"; 
 // Headers
 $headers = "From: " . strip_tags($_POST['userEmailAddress']) . "\r\n";
 $headers .= "Reply-To: ". strip_tags($_POST['userEmailAddress']) . "\r\n";
@@ -23,16 +23,24 @@ $to = $_POST["adminEmail"].", ".$_POST["userEmailAddress"];
 // This is where all the variables from the form are passed (except the email addresses)
 $message = "<div style='font-family: Sans-Serif; width: 100%; background: #cccccc'><div style='height: 30px; max-width: 600px; margin: 0 auto; padding-top: 5px; color: #888888; text-align: center'>&nbsp;</div><div style='max-width: 600px; padding: 15px; margin: 0 auto; background: #ffffff; border: 15px solid #cccccc'>";
 
-$message .= "<p><h1 style='background: #222222; color: white; text-align: center; padding: 15px'>Spiritual Gifts Test</h1></p>";
+$message .= "<p><h1 style='background: #222222; color: white; text-align: center; padding: 15px'>Spiritual Gifts Survey</h1></p>";
 
-$message .= "<p>Thank you for taking the Spiritual Gifts Test.  Following are your results.  A representative from our church will be contacting you about discussing your results and opportunities both in our church and our community where your passions and gifts may best be put to use.</p>";
+$message .= "<p>Thank you for taking the Spiritual Gifts Survey.  We will try to get in touch with you soon to discuss how your gifts may used in our ministry.</p>";
 
 //list Spiritual gifts.  The for loop goes through all the individual results
-$message .= "<p><h2 style='background: #555555; color: white; text-align: center; padding: 10px'>[S]piritual Gifts</h2></p>";
+if($_POST['shape'] != 'false') {
+    $message .= "<p><h2 style='background: #555555; color: white; text-align: center; padding: 10px'>[S]piritual Gifts</h2></p>";
+} else {
+    $message .= "<br />";
+}
 $message .= "<b>Here is how your spiritual gifts scored:</b><br /><br />";
+//gifts loop
 for($i=0;$i<$_POST["typesCount"];$i++) {
     $message .= "<p><div style='display: inline-block; width: 110px'>".$_POST["typeTitle".$i]." </div>".$_POST["typeResult".$i]."</p>";
 }
+
+if($_POST['shape'] != 'false') {
+//[S]piritual Gifts
 $message .= "<p><div style='background: #aaaaaa; text-align: center; color: white; padding: 5px; font-weight: normal'>#1 Gift, ".$_POST["top_1"]." (".$_POST["topScore_1"].")</div></p>";
 $message .= "<p><b>I see this gift evident in my life in the following ways:</b><br />".$_POST["topreason1_text"]."</p>";
 $message .= "<p><div style='background: #aaaaaa; text-align: center; color: white; padding: 5px; font-weight: normal'>#2 Gift, ".$_POST["top_2"]." (".$_POST["topScore_2"].")</div></p>";
@@ -90,7 +98,7 @@ $message .= "<p><h2 style='background: #555555; color: white; text-align: center
 <p>".$_POST["experience6_text"]."</p>
 <p>".$_POST["experience7_text"]."</p>
 ";
-
+}
 //end email body div
 $message .= "</div><div style='height: 35px; max-width: 600px; text-align: center; margin: 0 auto; padding-top: 8px'><a href='http://gifts.mynamedia.net' target='_blank' style='text-decoration: none; color: #888888'>G</a></div></div>";
 
