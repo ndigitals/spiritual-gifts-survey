@@ -84,7 +84,7 @@ function spiritual_gifts_shortcode_func( $atts ) {
             'email' => get_bloginfo( 'admin_email', 'Display'),
             'shape' => 'true',
         ), $atts ) );
-        spiritual_gifts_write_form( $email, $shape );
+        return spiritual_gifts_write_form( $email, $shape );
     }
 }
 add_shortcode( 'spiritual_gifts', 'spiritual_gifts_shortcode_func' );
