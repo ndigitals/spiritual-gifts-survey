@@ -151,11 +151,16 @@ function spiritual_gifts_write_form( $email, $shape ) {
                 surveyPreview = document.getElementById('typeResult'+i);
                 theScore = calculateScore(i,typeCount);
                 maxScore = ".count($my_arr)."/typeCount * 4;
-                surveyPreview.value = parseInt(theScore*(100/maxScore))+'%';
+				scoreValue = parseInt(theScore*(100/maxScore));
+				if(scoreValue == 100) {
+//Because the sorting I'm doing is alphabetical instead of numerical, 100 is one of the smallest numbers.  So I made all 100's into 99's so they will be the highest value alphabetically.  This is fine because a 99 score isn't possible to get with the survey, and nobody is absolutely perfect in one area anyway, so 99% is fine!
+					scoreValue = 99;
+				}
+                surveyPreview.value = scoreValue +'%';
                 keyName = document.getElementById('typeTitle'+i).value;
                 //sortVal[keyName] = parseInt(theScore*(100/maxScore))+'%';
                 sortVal[i] = new Array(2);
-                sortVal[i][0] = parseInt(theScore*(100/maxScore))+'%';
+                sortVal[i][0] = scoreValue +'%';
                 sortVal[i][1] = keyName;
 //                document.getElementById('typeTitle'+i).value += keyName;
             }
