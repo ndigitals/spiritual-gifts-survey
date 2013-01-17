@@ -8,7 +8,7 @@ Author: Dave Koenig
 Author URI: http://mynamedia.com
 License: GPLv2
 
-Copyright 2012  PLUGIN_AUTHOR_NAME  (email : dave@mynamedia.com)
+Copyright 2013  PLUGIN_AUTHOR_NAME  (email : dave@mynamedia.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as 
