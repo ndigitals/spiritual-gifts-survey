@@ -3,7 +3,7 @@
 Plugin Name: Spiritual Gifts Survey (and optional S.H.A.P.E survey)
 Plugin URI: http://gifts.mynamedia.net
 Description: Spiritual Gifts and Strengths survey to help church members find their place of service in the local church and other service organizations.
-Version: 0.9.7
+Version: 0.9.8
 Author: Dave Koenig
 Author URI: http://mynamedia.com
 License: GPLv2
@@ -68,7 +68,7 @@ function spiritual_gifts_settings_page() { /*I have to exit PHP to write all the
 // [spiritual_gifts email="email@address.com"]
 function spiritual_gifts_shortcode_func( $atts ) {
 //    echo "referrer: ".$_SERVER['HTTP_REFERER']."<br />";
-//    echo "current: ".curPageURL();
+//    echo "current: ".mm_curPageURL();
     /*
     Checks to see if the form was just submitted.  This plugin calls the file 'gifts-email.php'
     which sends the email then redirects the user back to the original survey page.
@@ -77,7 +77,7 @@ function spiritual_gifts_shortcode_func( $atts ) {
     drawn up.  This way only one Wordpress page needs to be made, rather than having them create one
     page for the form and another for the thank you.
     */
-    if (curPageURL() == $_SERVER['HTTP_REFERER']."?submitted" ) {
+    if (mm_curPageURL() == $_SERVER['HTTP_REFERER']."?submitted" ) {
         return "Thank you, your survey has been submitted.  <a href='".$_SERVER['HTTP_REFERER']."'>Take it again</a>?";
     } else {
         extract( shortcode_atts( array(
@@ -519,8 +519,8 @@ $s_types = explode("\n", $s_typetext);
 return $s_types;
 }
 //grabs current page url
-//echo curPageURL();
-function curPageURL() {
+//echo mm_curPageURL();
+function mm_curPageURL() {
  $pageURL = 'http';
  if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
  $pageURL .= "://";
