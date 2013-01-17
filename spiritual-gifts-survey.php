@@ -3,7 +3,7 @@
 Plugin Name: Spiritual Gifts Survey (and optional S.H.A.P.E survey)
 Plugin URI: http://gifts.mynamedia.net
 Description: Spiritual Gifts and Strengths survey to help church members find their place of service in the local church and other service organizations.
-Version: 0.9.5
+Version: 0.9.7
 Author: Dave Koenig
 Author URI: http://mynamedia.com
 License: GPLv2
