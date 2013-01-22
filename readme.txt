@@ -1,52 +1,34 @@
 === Plugin Name ===
 Contributors: mynamedia
-Donate link: http://gifts.mynamedia.net
-Tags: spiritual gifts, survey, s.h.a.p.e., test, church, plugin, page, admin
-Requires at least: 3.2
+Donate link: http://email-link.mynamedia.net
+Tags: email for link, email, link
+Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 0.9.8
+Stable tag: 0.9.0
 
-Spiritual Gifts Survey to help church members find their place of service in the local church and other service organizations.
+This is a simple plugin with a shortcode that requires users to input their first & last name and email address to get access to a link (which will be emailed to them).
 
 == Description ==
 
-The Spiritual Gifts Survey gives a 128 question test and ranks the gifts based on the test score.  In addition, the optional S.H.A.P.E. portion of the survey uses Saddleback Church's S.H.A.P.E. model of Spiritual Gifts, Heart, Abilities, Personality, and Experience to help reveal how God as already shaped you for serving Him. 
+This is a simple plugin with a shortcode that requires users to input their first & last name and email address to get access to a link (which will be emailed to them).  I wrote this plugin one afternoon because a similar plugin lost functionality when one of the plugins it depended on was removed from Wordpress.org for some reason.
 
 == Installation ==
 
 1. Activate the plugin through the 'Plugins' menu in WordPress
-2. Place the [spiritual_gifts] shortcode on the page you wish the survey to appear.
-3. Use [spiritual_gifts email="your@email.com"] if you wish to specify the target email address, otherwise the admin email will be used.
-4. Use [spiritual_gifts shape="false"] if you wish to disable the S.H.A.P.E. portion of the survey.
+2. Place the [email_link] shortcode on the page you wish the form to appear.
+3. Use [email_link email="your@email.com"] if you wish to specify the target email address, otherwise the admin email will be used.
 
 == Frequently Asked Questions ==
 
 = How do I specify which email address will receive the surveys? =
 
-Use [spiritual_gifts email="your@email.com"] if you wish to specify the target email address, otherwise the Wordpress admin email will be used.
-
-= How do I disable the S.H.A.P.E. portion of the survey? =
-
-Add shape="false" to your shortcode... [spiritual_gifts shape="false"]
+Use [email_link email="your@email.com"] if you wish to specify the target email address, otherwise the Wordpress admin email will be used.
 
 == Screenshots ==
 
-1. Here is a screenshot from the form
-2. Here is a screenshot from the HTML version of the email
-3. Here is a screenshot from the plain-text version of the email
-
 == Changelog ==
 
-= 0.9.8 =
-*Fixed a "redeclare" error with my function curPageURL()
-
-= 0.9.6 =
-*Fixed sorting issue where a 100% score wasn't showing up in the top three
-
-= 0.9.5 =
-*Added option to disable S.H.A.P.E. portion of survey
-
-= 0.9.3 =
+= 0.9.0 =
 *First stable version of plugin
 
 == Upgrade Notice ==
