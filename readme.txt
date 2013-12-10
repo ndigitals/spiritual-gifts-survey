@@ -3,8 +3,8 @@ Contributors: mynamedia
 Donate link: http://gifts.mynamedia.net
 Tags: spiritual gifts, survey, s.h.a.p.e., test, church, plugin, page, admin
 Requires at least: 3.2
-Tested up to: 3.5
-Stable tag: 0.9.8
+Tested up to: 3.7.1
+Stable tag: 0.9.9
 
 Spiritual Gifts Survey to help church members find their place of service in the local church and other service organizations.
 
@@ -36,6 +36,10 @@ Add shape="false" to your shortcode... [spiritual_gifts shape="false"]
 3. Here is a screenshot from the plain-text version of the email
 
 == Changelog ==
+
+= 0.9.9 =
+*Added "Name" field to form
+*Fixed sorting issue with <10% scores
 
 = 0.9.8 =
 *Fixed a "redeclare" error with my function curPageURL()

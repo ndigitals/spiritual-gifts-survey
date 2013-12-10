@@ -13,7 +13,7 @@ ob_start();
 // Contact subject
 $subject ="Spiritual Gifts Survey"; 
 // Headers
-$headers = "From: " . strip_tags($_POST['userEmailAddress']) . "\r\n";
+$headers = "From: " . strip_tags($_POST['userName']) . " <" . strip_tags($_POST['userEmailAddress']) . ">\r\n";
 $headers .= "Reply-To: ". strip_tags($_POST['userEmailAddress']) . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -25,7 +25,7 @@ $message = "<div style='font-family: Sans-Serif; width: 100%; background: #ccccc
 
 $message .= "<p><h1 style='background: #222222; color: white; text-align: center; padding: 15px'>Spiritual Gifts Survey</h1></p>";
 
-$message .= "<p>Thank you for taking the Spiritual Gifts Survey.  We will try to get in touch with you soon to discuss how your gifts may used in our ministry.</p>";
+$message .= "<p>Thank you " . strip_tags($_POST['userName']) . " for taking the Spiritual Gifts Survey.  We will try to get in touch with you soon to discuss how your gifts may used in our ministry.</p>";
 
 //list Spiritual gifts.  The for loop goes through all the individual results
 if($_POST['shape'] != 'false') {

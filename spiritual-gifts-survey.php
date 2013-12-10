@@ -3,12 +3,12 @@
 Plugin Name: Spiritual Gifts Survey (and optional S.H.A.P.E survey)
 Plugin URI: http://gifts.mynamedia.net
 Description: Spiritual Gifts and Strengths survey to help church members find their place of service in the local church and other service organizations.
-Version: 0.9.8
+Version: 0.9.9
 Author: Dave Koenig
 Author URI: http://mynamedia.com
 License: GPLv2
 
-Copyright 2012  PLUGIN_AUTHOR_NAME  (email : dave@mynamedia.com)
+Copyright 2013  PLUGIN_AUTHOR_NAME  (email : dave@mynamedia.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as 
@@ -152,26 +152,21 @@ function spiritual_gifts_write_form( $email, $shape ) {
                 theScore = calculateScore(i,typeCount);
                 maxScore = ".count($my_arr)."/typeCount * 4;
 				scoreValue = parseInt(theScore*(100/maxScore));
-				if(scoreValue == 100) {
-//Because the sorting I'm doing is alphabetical instead of numerical, 100 is one of the smallest numbers.  So I made all 100's into 99's so they will be the highest value alphabetically.  This is fine because a 99 score isn't possible to get with the survey, and nobody is absolutely perfect in one area anyway, so 99% is fine!
-					scoreValue = 99;
-				}
                 surveyPreview.value = scoreValue +'%';
                 keyName = document.getElementById('typeTitle'+i).value;
                 //sortVal[keyName] = parseInt(theScore*(100/maxScore))+'%';
                 sortVal[i] = new Array(2);
-                sortVal[i][0] = scoreValue +'%';
+                sortVal[i][0] = scoreValue;
                 sortVal[i][1] = keyName;
 //                document.getElementById('typeTitle'+i).value += keyName;
             }
-            sortVal.sort();
-            sortVal.reverse();
+            sortVal.sort(function(a,b){return ((a[0] > b[0]) ? -1 : ((a[0] < b[0]) ? 1 : 0))});
             document.getElementById('top_1').value = sortVal[0][1];
             document.getElementById('top_2').value = sortVal[1][1];
             document.getElementById('top_3').value = sortVal[2][1];
-            document.getElementById('topScore_1').value = sortVal[0][0];
-            document.getElementById('topScore_2').value = sortVal[1][0];
-            document.getElementById('topScore_3').value = sortVal[2][0];
+            document.getElementById('topScore_1').value = sortVal[0][0] + '%';
+            document.getElementById('topScore_2').value = sortVal[1][0] + '%';
+            document.getElementById('topScore_3').value = sortVal[2][0] + '%';
             document.getElementById('topreason_1').innerHTML = sortVal[0][1] + ': ';
             document.getElementById('topreason_2').innerHTML = sortVal[1][1] + ': ';
             document.getElementById('topreason_3').innerHTML = sortVal[2][1] + ': ';
@@ -343,9 +338,11 @@ function spiritual_gifts_write_form( $email, $shape ) {
 <div id='submit-form'>
     <h2 style='margin-top: 20px'>Submit Information</h2>
     Thank you for taking the time to fill out this survey.  A copy will be sent to you as well as a staff member who will be able to help you find your place of service with us and/or in the community.
+    <p style='text-align: center'>Your Name:<br />
+    <input type='text' name='userName' /></p>
     <p style='text-align: center'>Your Email Address:<br />
-    <input type='text' name='userEmailAddress' /><br />
-    <input type='submit' value='Submit Form!' /><br /></p>
+    <input type='text' name='userEmailAddress' /></p>
+    <p style='text-align: center'><input type='submit' value='Submit Form!' /></p>
     <script type='text/javascript'>previewResults(".count($my_types_arr).");</script>
 
 </div><!-- submit-form -->";
