@@ -3,7 +3,7 @@
 Plugin Name: Spiritual Gifts Survey (and optional S.H.A.P.E survey)
 Plugin URI: http://gifts.mynamedia.net
 Description: Spiritual Gifts and Strengths survey to help church members find their place of service in the local church and other service organizations.
-Version: 0.9.9
+Version: 0.9.10
 Author: Dave Koenig
 Author URI: http://mynamedia.com
 License: GPLv2
@@ -76,8 +76,13 @@ function spiritual_gifts_shortcode_func( $atts ) {
     had already been submitted), and if so, sends a "thank you" message.  If not, the survey form is
     drawn up.  This way only one Wordpress page needs to be made, rather than having them create one
     page for the form and another for the thank you.
+    
+    An additional SPAM filter was added, with ?spam added onto the URL
     */
-    if (mm_curPageURL() == $_SERVER['HTTP_REFERER']."?submitted" ) {
+    if (mm_curPageURL() == $_SERVER['HTTP_REFERER']."?spam" ) {
+        // spam bot, boo!
+        return "You filled in a hidden field that is only viewable to spam bots.  If you have received this message in error, please contact us!";
+    } else if (mm_curPageURL() == $_SERVER['HTTP_REFERER']."?submitted" ) {
         return "Thank you, your survey has been submitted.  <a href='".$_SERVER['HTTP_REFERER']."'>Take it again</a>?";
     } else {
         extract( shortcode_atts( array(
@@ -342,6 +347,10 @@ function spiritual_gifts_write_form( $email, $shape ) {
     <input type='text' name='userName' /></p>
     <p style='text-align: center'>Your Email Address:<br />
     <input type='text' name='userEmailAddress' /></p>
+
+    <p style='text-align: center; position: absolute; margin-left: -9999px'>I am a spam bot if I fill in the following field:<br />
+    <input type='text' name='anotherField' /></p>
+
     <p style='text-align: center'><input type='submit' value='Submit Form!' /></p>
     <script type='text/javascript'>previewResults(".count($my_types_arr).");</script>
 
